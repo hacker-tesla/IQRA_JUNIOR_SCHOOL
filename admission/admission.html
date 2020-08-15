@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<!-- ========================================================================== #
+#                           Junior School and College
+#                    A School Management System with FLASK
+#   
+#       Create by some intelligent programmer
+#       Full CRUD facility
+#   
+#       Github: https://github.com/hacker-tesla/Junior_School_and_College
+# ========================================================================== -->
+
+<html lang="en">
+
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ >
+	# This Section help you to find 
+	  specific section. 
+
+	0: head
+		0.0: styles
+		0.1: fonts
+
+	1: body
+		1.0: main
+			1.0.0: Background image
+				1.0.0.0: Navigation menu
+			
+			2.0.0: All content
+				2.0.1: Links of curiculam, books and routine
+				2.0.2: content
+
+	3: Footer section
+		3.0: Using flexbox for three column
+			3.0.0: Contact
+			3.0.1: Quick link
+			3.0.2: Follow us
+			
+		3.1: copyright and other important thing
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<head>
+
+		<!-- meta section -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Emon Hossain">
+		
+		<title>
+			Iqra Junior School
+		</title>
+
+		<!-- link section -->
+        <link 
+            rel="stylesheet" 
+            href="./../home/index.css"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="./../academic/academic.css"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="./admission.css"
+        />
+
+	</head>
+    
+    <body>
+        
+        <!-- <div class="back">
+            <button class="button"> Back </button>
+        </div> -->
+
+        <main>
+
+            <div class="form_container">
+                
+                <header>
+                    <h1 class="school_name">IQRA JUNIOR SCHOOL</h1>
+                    <h2 class="title">Admission Form - 2020</h2>
+                </header>
+
+                <section>
+                    
+                    <!-- admission form -->
+                    <form action="" method="post" class="grid_admission">
+
+                        <!-- name -->
+                        <div class="form_input" id="name">
+                      
+                            <label for="name" class="form_label" > Name </label>
+                            
+                            <input 
+                                type="text"
+                                name="name"
+                                class="form_textbox"
+                                placeholder="Enter your full name"
+                            />
+
+                        </div>
+                            
+                        <!-- father's name -->
+                        <div class="form_input" id="father_name">
+                            
+                            <label for="father_name" class="form_label"> Father's Name </label> 
+                            
+                            <input
+                                type="text"
+                                name="father_name"
+                                class="form_textbox"
+                                placeholder="Enter your father's name"
+                            />
+
+                        </div>
+
+                        <!-- mother's name -->
+                        <div class="form_input" id="mother_name">
+                            
+                            <label for="mother_name" class="form_label"> Mother's Name </label>
+                            
+                            <input 
+                                type="text"
+                                name="mother_name"
+                                class="form_textbox"
+                                placeholder="Enter your mother's name"
+                            />
+
+                        </div>
+
+                        <!-- select applicable class -->
+                        <div class="form_input" id="class">
+                            
+                            <label for="class" class="form_label"> Class you want to apply </label>
+
+                            <select name="class" class="form_textbox">
+                                <option value="n/a"> --- Select Class --- </option>
+                                <option value="play"> 00 - PLAY </option>
+                                <option value="nursary"> 00 - NURSARY </option>
+                                <option value="one"> 01 - ONE </option>
+                                <option value="two"> 02 - TWO </option>
+                                <option value="three"> 03 - THREE </option>
+                                <option value="four"> 04 - FOUR </option>
+                                <option value="five"> 05 - FIVE </option>
+                                <option value="six"> 06 - SIX </option>
+                                <option value="seven"> 07 - SEVEN </option>
+                                <option value="eight"> 08 - EIGHT </option>
+                            </select>
+
+                        </div>
+
+                        <!-- phone number -->
+                        <div class="form_input" id="phone_number">
+
+                            <label for="phone_number" class="form_label"> Phone Number </label>
+
+                            <input 
+                                type="number"
+                                name="phone_number"
+                                class="form_textbox"
+                                placeholder="Phone Number"
+                            />
+
+                        </div>
+
+                        <!-- birth cirtificate -->
+                        <div class="form_input" id="birth_cirtificate">
+                            
+                            <label for="birth_cirtificate" class="form_label"> Birth Cirtificate No </label>
+                            
+                            <input 
+                                type="number"
+                                name="birth_cirtificate"
+                                class="form_textbox" 
+                                placeholder="Birth Cirtificate No"
+                            />
+                        </div>
+
+                        <!-- birth date -->
+                        <div class="form_input" id="birth_date">
+
+                            <label for="birth_date" class="form_label"> Birth Date </label>
+
+                            <input
+                                type="date"
+                                name="birth_date"
+                                class="form_textbox"
+                                placeholder="DD/MM/YY"
+                            />
+
+                        </div>
+
+                        <!-- gender -->
+                        <div class="form_input" id="gender">
+                            
+                            <p class="form_label"> Gender </p>
+                        
+                            <span class="checkbox_flex">
+                                <div class="form_checkbox">
+                                    <input type="checkbox" class="check" id="male" />
+                                    <label for="male" class="check_option"> MALE </label>
+                                </div>
+
+                                <div class="form_checkbox">
+                                    <input type="checkbox" class="check" id="female" />
+                                    <label for="female" class="check_option"> FEMALE </label>
+                                </div>
+                            </span>
+
+                        </div>
+
+                        <!-- present address -->
+                        <p class="input_title" id="address">
+                            Present Address
+                        </p>
+                        
+                        <!-- care of -->
+                        <div class="form_input" id="care_of">
+                            
+                            <label for="care_of" class="form_label"> Care of </label>
+                            
+                            <input 
+                                type="text"
+                                name="care_of"
+                                class="form_textbox"
+                                placeholder="Care of"
+                            />
+
+                        </div>
+
+                        <!-- village -->
+                        <div class="form_input" id="village">
+                           
+                            <label for="village" class="form_label"> Village </label>
+                            
+                            <input 
+                                type="text"
+                                name="village"
+                                class="form_textbox"
+                                placeholder="Village"
+                            />
+
+                        </div>
+
+                        <!-- post office -->
+                        <div class="form_input" id="post_office">
+                            
+                            <label for="post_office" class="form_label"> Post Office </label>
+                            
+                            <input 
+                                type="text"
+                                name="post_office"
+                                class="form_textbox"
+                                placeholder="Post Office"
+                            />
+
+                        </div>
+
+                        <!-- post code -->
+                        <div class="form_input" id="post_code">
+                            
+                            <label for="post_code" class="form_label"> Post Code </label>
+
+                            <input 
+                                type="number"
+                                name="post_code"
+                                class="form_textbox"
+                                placeholder="Post Code"
+                            />
+
+                        </div>
+
+                        <!-- upozilla -->
+                        <div class="form_input" id="upozilla">
+                          
+                            <label for="upozilla" class="form_label"> Upozilla </label>
+                          
+                            <input 
+                                type="text"
+                                name="upozilla"
+                                class="form_textbox"
+                                placeholder="Upozilla"
+                            />
+
+                        </div>
+
+                        <!-- zilla -->
+                        <div class="form_input" id="zilla">
+                          
+                            <label for="zilla" class="form_label"> Zilla </label>
+                            
+                            <input 
+                                type="text"
+                                name="zilla"
+                                class="form_textbox"
+                                placeholder="Zilla"
+                            />
+
+                        </div>
+
+                        <!-- region -->
+                        <div class="form_input" id="region">
+                            
+                            <label for="region" class="form_label"> Region </label> 
+
+                            <input  
+                                type="text"
+                                name="region"
+                                class="form_textbox"
+                                placeholder="Region"
+                            />
+
+                        </div>
+
+                        <!-- email address -->
+                        <div class="form_input" id="email">
+                            
+                            <label for="email" class="form_label"> E-mail </label>
+
+                            <input 
+                                type="email"
+                                name="email"
+                                class="form_textbox"
+                                placeholder="Email Address"
+                            />
+
+                        </div>
+
+                        <!-- photo upload -->
+                        <div class="form_input" id="photo">
+                            
+                            <label for="photo" class="form_label"> Photo </label>
+
+                            <input 
+                                type="file"
+                                name="photo"
+                                class="form_textbox"
+                                accept="image/*"
+                            />
+
+                        </div>
+
+                        <!-- signature upload -->
+                        <div class="form_input" id="signature">
+                            
+                            <label for="signature" class="form_label"> Signature </label>
+
+                            <input
+                                type="file"
+                                name="signature" 
+                                class="form_textbox"
+                                accept="image/*"
+                            />
+
+                        </div>
+
+                        <!-- agreement -->
+                        <div id="agreement">
+                            <p>
+                                I agree all the terms and condition and cirtify that all the information I gave above is true. If the authority find any
+                                flase information I will accept any dicision that the authority takes.
+                            </p>
+                        </div>
+
+                        <!-- reset button -->
+                        <div class="form_button" id="refresh">
+                            <input type="reset" value="Refresh" class="submit_button refresh"/>
+                        </div>
+
+                        <!-- submit button -->
+                        <div class="form_button" id="submit">
+                            <button class="submit_button submit"> Submit </button>
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+            
+        </main>
+    
+    </body>  
+
+</html>

@@ -1,0 +1,1095 @@
+/* ============================================================================ #
+#                               IQRA JUNIOR SCHOOL                              #
+#                       Bottali Bazar, Lakshmipur, Bangladesh                    #
+#                                                                               #
+#       Create by Emon Hossain                                                  #
+#       Ex-Student and Assistent Teacher of Iqra Junior School                  #                                    #                    
+#       Batch - 2011                                                            #
+# ============================================================================  */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ >
+========================================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    DEVELOPER SECTION   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+========================================================================================
+
+    # This Section help you to find specific section. 
+
+    
+    => global SECTION
+        00: initializing color variable
+            00.01: color section
+            00.02: font section
+
+        06: footer section 
+            06.01: school name in footer
+            06.02: contact section 
+                06.02.01: beautify title name and location address
+                06.02.02: school time
+            06.03: quick link
+            06.04: follow us section 
+            06.05: copyright section 
+                06.05.01: developer profile link
+        
+    => indivisual section for every pages
+        
+        ================
+        ** index.html **
+        ================
+        01: slider section
+            01.01: navigation menu
+            01.02: text section
+                01.02.01: green highlight text
+                01.02.02: styling school name
+                01.02.03: know more button
+
+        02: principle section
+            02.01: resize image of principle
+            02.02: styling text of principle speech
+
+        03: event and notice section
+            03.01: event section 
+                03.01.01: title of event and notice section. Both section apply this css rule
+                03.01.02: all indivisual events beautify
+                03.01.03: make shadow on events hover
+                    03.01.03.01: resizing events image
+            03.02: notice section 
+                03.02.01: make all notice inline with flex
+                    03.02.01.01: align right-top notice date with blue background
+                    03.02.01.02: styling text of notice section
+                    03.02.01.03: resize image of notice section
+            
+        04: what parents say about us
+            04.01: parents speech
+
+        05: admission fair
+            05.01: admission fair text
+            05.02: using flexbox for two section 
+            05.03: styling admission and contact class title
+
+        ===================
+        ** academic.html **
+        ===================
+        07: academic - background
+            07.01: academic title
+            07.02: link of curiculam, books and routine
+            07.03: styling all class's image
+                07.03.01: resize image
+                07.03.02: align image and chlid text
+                    07.03.01.01: all class
+        
+        08: styling table - custom table
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+* {
+    margin: 0px;
+    padding: 0px; 
+}
+
+
+
+/* 00: Intializing color variable */
+
+:root {
+
+/*  00.01: color section */
+    --green-highlight-text: #27ae60;
+    --green-admission-bgcolor: #09e665; 
+    --button-blue: #009ddc;
+    --text-white: #fff;
+    --principal-background: #f7f7f7;
+    --default-font-color: #81878c;
+    --black-color: #000;
+    --footer-link-color: #e0d2d2;
+    --footer-email-color: #2bbde8;
+
+    
+    /* 00.02: font section */
+    --default-font: arial, sans-serif;
+
+    --meet-star-size: 12px;
+    --meet-principal-size: 30px;
+    --principle-name-size: 15px;
+    --event-time: 20px;
+    --admission-fair-size: 5rem;
+    --footer-school-name-size: 3rem;
+
+    --small-font-weight: 800;
+    --large-font-weight: 1000;
+
+    --principal-name-height: 5;
+    --meet-principal-height: 2.1;
+    --pricipal-speech-height: 1.8;
+}
+
+
+
+body {
+    display: block;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    color: var(--default-font-color, #81878c);
+    font-family: var(--default-font, arial);
+}
+
+
+
+
+/*=====================================================================================================================================
+*****************************************************     index.html      *************************************************************
+=====================================================================================================================================*/
+
+
+
+
+/*========== 01: slider section ==========*/
+
+.slider-section {
+    height: 100vh;
+    background: linear-gradient(#2e4a3cc4, #0020ff4d),
+        url(https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);  /*  slider image in this current directory  */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+    /*----- 01.01: Navigation Menu -----*/
+    nav {
+        color: var(--text-white, #fff);
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    nav > div {
+        margin: 2%;
+    }
+
+        nav .navbar {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav .navbar a {
+            font-style: normal;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        nav .navbar > div {
+            margin: auto 10px;
+            outline: none;
+            font-weight: bold;
+            font-size: var(--principle-name-size, 15px);
+        }
+
+        nav .navbar > div a {
+            border-top: 2px solid transparent;
+            padding-top: 5px;
+            transition: color 0.3s ease-in-out, border 0.5s ease-in-out;
+        }
+
+        nav .navbar > div:hover a,
+        nav .navbar > div:focus a  {
+            border-top: 2px solid var(--button-blue, #009ddc);
+            color: var(--button-blue, #009ddc);
+        }
+
+
+    /*----- End of Navigation Menu -----*/
+
+    /*----- 01.02: Text Section -----*/
+        .text-section {
+            text-align: center;
+            padding-top: 10%;
+            color: var(--text-white, #fff);
+        }
+
+            .text-section h1 {
+                font-weight: var(--small-font-weight, 1000);
+                font-size: 3rem;
+            }
+
+            /* 01.02.01: green highlight text */
+            .text-section .green-text {
+                color: var(--green-highlight-text, #27ae60);
+            }
+
+            .text-section h2 {
+                font-weight: var(--small-font-weight, 800);
+            }
+
+            .text-section h4 {
+                font-size: 1rem;
+            }
+            
+            /* 01.02.02: Styling School Name */
+            .text-section .iqra {
+                font-weight: 1000;
+                font-size: 1.1rem;
+            }
+            
+
+            /* 01.02.03: know more blue button */
+            .text-section button {
+                margin-top: 5rem;
+                border: 2px solid transparent;
+                border-radius: 20px;
+                padding: 10px 50px;
+                font-size: 20px;
+                font-weight: 1000;
+                background-color: var(--button-blue, #009ddc);
+                color: var(--text-white, #fff);
+                transition: all ease-in-out 0.3s;
+            }
+
+            .text-section button:hover,
+            .text-section button:focus {
+                background: transparent;
+                border: 2px solid var(--text-white, #fff);
+                font-size: 19px;
+                border-radius: 0;
+                outline: none;
+            }
+
+
+
+
+
+
+
+/*========== 02: principal section ==========*/
+.principal-section {
+    height: 100vh;
+    padding: 3rem;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--principal-background, #f7f7f7);
+    
+}
+
+    /*  02.01: resize image of principal   */
+    .principal-img {
+        height: 450px;
+        width: 350px;
+    }
+
+    /* 02.02: styling text of principal speech */
+    .principal-speech {
+        padding: 0 2rem;
+    }
+
+        .principal-speech h3 {
+            font-weight: var(--small-font-weight, 800);
+            font-size: var(--meet-star-size, 12px);
+            line-height: var(--meet-principal-height, 2.1);
+        }
+
+        .principal-speech h1 {
+            font-size: var(--meet-principal-size, 30px);
+            font-weight: var(--small-font-weight, 800);
+            color: var(--green-highlight-text, #27ae60);
+            line-height: var(--meet-principal-height, 2.1);
+        }
+
+        .principal-speech p {
+            line-height: var(--pricipal-speech-height, 1.8);
+            text-align: justify;
+
+        }
+
+        .principal-speech .principal-name {
+            font-size: var(--principal-name-size, 15px);
+            font-weight: var(--small-font-weight, 800);
+            line-height: var(--principal-name-height, 5);
+        }
+
+        .principal-speech button {
+            border: 2px solid var(--green-highlight-text ,#27ae60);
+            border-radius: 10px;
+            padding: 10px 50px;
+            font-size: 20px;
+            font-weight: 1000;
+            background-color: transparent;
+            color: var(--green-highlight-text, #27ae60);
+            transition: all ease-in-out 0.6s;
+        }
+
+        .principal-speech button:hover,
+        .principal-speech button:focus {
+            color: var(--text-white, #fff);
+            background: var(--button-blue,#009ddc);
+            border: 2px solid var(--text-white, #fff);
+            outline: none;
+        }
+
+
+
+
+
+
+
+/*========== 03: event and notice section ==========*/
+.event-notice {
+    padding: 1rem;
+}  
+
+    /*----------   03.01: event section   ----------*/
+
+    /* 03.01.01: title of event and notice section. Both section apply this css rule */
+    .event-notice .title {
+        text-align: center;
+    }
+
+        .event-notice .title h1 {
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            font-weight: var(--large-font-weight, 1000);
+            font-size: var(--events-size, 3.5rem);
+            color: var(--green-highlight-text, #27ae60);
+        }
+
+        .event-notice .title .events-button a {
+            text-decoration: none;
+            color: var(--green-highlight-text, #27ae60)
+        }
+
+        .event-notice .title .events-button {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .event-notice .title .events-button div {
+            cursor: pointer;
+            margin-top: 1.5rem;
+            padding: 10px 30px;
+            background-color: transparent;
+            color: var(--green-highlight-text, #27ae60);
+            font-weight: 800;
+            border: 2px solid var(--green-highlight-text, #27ae60);
+            background-color: transparent;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .event-notice .title .events-button div:hover,
+        .event-notice .title .events-button div:focus {
+            border-radius: 15px;
+            border: 2px solid var(--button-blue, #009ddc);
+            background-color: var(--button-blue, #009ddc);
+            color: var(--text-white, #fff);
+            outline: none;
+        }
+        
+           
+        .event-notice .title .events-button div:hover a,
+        .event-notice .title .events-button div:focus a {
+            color: var(--text-white, #fff);
+        }
+        
+
+        
+
+        
+
+
+    
+    /*  03.01.02: all indivisial events beautify  */
+    .events > div  {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+        margin-top: 30px;
+        margin-left: 50px;
+        margin-right: 30px;
+        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease-in-out;
+    }
+
+
+    /* 03.01.03: make shadow on events hover */
+    .events > div:hover,
+    .events > div:focus {
+        box-shadow: 5px 5px 50px 0px rgba(91, 105, 105, 0.527),
+                    -5px -5px 50px 0px rgba(91, 105, 105, 0.527);
+        transition: all ease-in-out 0.2s;
+        outline: none;
+    }
+
+    .events .text-content h2 { 
+        color: var(--green-highlight-text, #27ae60);
+        font-size: var(--event-time, 20px);
+        font-weight: var(--small-font-weight, 800);
+    }
+
+    .events .text-content .date {
+        font-weight: var(--small-font-weight, 1000);
+        font-size: 30px;
+    }
+
+    .events .text-content h1 {
+        color: var(--black-color, #000);
+        line-height: var(--meet-principal-height, 2.1);
+    }
+
+    .events .text-content p {
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: justify;
+    }
+
+    .events .text-content button {
+        margin: 20px 20px;
+        border: 2px solid #27ae60;
+        border-radius: 50px;
+        padding: 5px 20px;
+        font-size: var(--principle-name-size, 20px);
+        font-weight: 1000;
+        background-color: transparent;
+        color: var(--green-highlight-text, #27ae60);
+        transition: all ease-in-out 0.6s;
+    }
+
+    .events .text-content button:hover,
+    .events .text-content button:focus {
+        padding: 5px 40px;
+        background-color: var(--green-highlight-text, #27ae60);
+        color: var(--text-white, #fff);
+        outline: none;
+    }
+        /* 03.01.03.01: resizing events image */
+        .events div img {
+            height: 280px;
+            width: 390px;
+        }
+
+
+
+    
+    /* ----------   03.02: notice section    ---------- */
+
+    .notice-section {
+        height: 100vh;
+        background-color: var(--principal-background, #f7f7f7);
+    }
+
+    .event-notice .notice-heading h1 {
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 03.02.01: make all notice inline with flexbox */
+    .event-notice .public-notice {
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+        .event-notice .public-notice > div {
+            margin-right: 15px;
+            margin-left: 15px;
+            box-shadow: 0 0 7px 0px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease-in-out;
+            
+            position: relative;
+        }
+
+        .event-notice .public-notice > div:hover,
+        .event-notice .public-notice > div:focus {
+             box-shadow: 5px 5px 50px 0px rgba(91, 105, 105, 0.527),
+                        -5px -5px 50px 0px rgba(91, 105, 105, 0.527);
+        }
+
+        /* 03.02.01.01: align right-top notice date with blue background */ 
+        .event-notice .public-notice .notice-date {
+            text-align: right;
+            padding: 10px 15px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+
+            background-color: var(--button-blue, #009ddc);
+            color: var(--text-white, #fff);
+        }
+
+
+        /* 03.02.01.02: styling text of notice section */
+        .event-notice .public-notice .notice-text {
+            padding:15px 30px 30px;
+            font-size: 1rem;
+        }
+
+        .event-notice .public-notice .notice-text h2 {
+            text-align: left;
+            padding: 10px 0px 10px 10px;
+            color: var(--black-color, #000);
+        }
+
+        .event-notice .public-notice .notice-text p {
+            text-align: justify;
+            margin: 15px 0 20px;
+            line-height: 2;
+            color: var(--default-font-color, #81878c);
+        }
+
+        .event-notice .public-notice .notice-text button {
+            padding: 10px 15px;
+            font-size: 13px;
+            font-weight: var(--small-font-weight, 800);
+            color: var(--green-highlight-text, #27ae60);
+            background-color: transparent;
+            border: 2px solid var(--green-highlight-text, #27ae60);
+            transition: all ease-in-out 0.3s;
+        }
+
+        .event-notice .public-notice .notice-text button:hover,
+        .event-notice .public-notice .notice-text button:focus {
+            font-weight: 1000;
+            padding: 10px 30px;
+            background-color: var(--green-highlight-text, #27ae60);
+            color: var(--text-white, #fff);
+            outline: none;
+        }
+
+        /* 03.02.01.03: resize image of notice section */
+        .event-notice .public-notice div > img {
+            height: 180px;
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+
+/*========== 04: what parents say about us ==========*/
+
+.parents-speech{
+    height: 100vh;
+    background: linear-gradient(rgba(12, 40, 45, 0.72), rgba(12, 40, 45, 0.72)),
+                   url('https://validatedlearning.co/wp-content/uploads/2019/01/jerry-wang-1223250-unsplash-300x169.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 2%;
+}
+
+.parents-speech .parents-title{
+    color: var(--text-white, #fff);
+    margin-top: 2rem;
+    font-size: 1.7rem;
+}
+
+
+    /* ----------   04.01: parents speech  ---------- */
+
+    .parents-speech .first-parents{
+        margin: 13% 20%;
+        padding: 2% 5%;
+        text-align: justify;
+        background-color: rgba(31, 115, 110, 0.35);
+    }
+
+    .parents-speech .first-parents h1{
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(255, 255, 255);
+    }
+
+    .parents-speech .first-parents p{
+        color: rgba(211, 222, 224, 0.83);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+
+
+
+
+
+
+
+
+/*========== 05: Admission fair ==========*/
+
+.admission-fair{
+    color: #66756d;
+    background-color: #f7f7f7;
+    text-align: center;
+    height: 50vh;
+    padding: 2%;
+}
+
+    /* 05.01: admission fair text */
+    .admission-fair h1{
+        font-size: 3.7rem;
+        color: var(--green-admission-bgcolor);
+    }
+
+    /* 05.02: using flexbox for two section */
+    .admission-fair .admission-contact{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 5%;
+    }
+
+    .admission-fair .admission-contact .admission,
+    .admission-fair .admission-contact .contact{
+        flex: 1;
+    }
+
+    /* 05.03: styling admission and contact class title */
+    .admission-fair .admission-contact h3{
+        font-size: var(--meet-principal-size, 30px);
+        color: #66756d;
+    }
+
+    .admission-fair .admission-contact p{
+        font-size: 1.4rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+/*========== 06: Footer section ==========*/
+    
+footer{
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705) ),
+                url('https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+    /* 06.01: school name in footer */
+    footer h1{
+        text-align: center;
+        padding-top: 2%;
+        font-size: var(--footer-school-name-size, 3rem);
+    }
+
+    footer .three-column{
+        margin: 5% 2%;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .three-column div{
+        flex: 1;
+    }
+
+    
+    /* ---------- 06.02: contact section ---------- */
+
+    /* 06.02.01: beautify title name and Location address */
+    .location h3,
+    .follow-us h3,
+    .quick-link h3{
+        color: var(--green-highlight-text, #27ae60);
+        margin-bottom: 5%;
+        font-size: var(--meet-principal-size, 30px);
+        font-weight: bold;
+    }
+
+    .location p{
+        font-size: 20px;
+        font-weight: var(--small-font-weight, 800);
+        color: var(--footer-link-color, #e0d2d2);
+    }
+
+    /* 06.02.02: school time */
+    .contact .school-time p{
+        margin-top: 25%;
+        margin-bottom: 5%;
+        font-size: var(--meet-principal-size, 30px);
+        font-weight: bold;
+        color: var(--button-blue, #009ddc);
+    }
+    
+        .school-time span{
+            line-height: var(--pricipal-speech-height, 1.8);
+            font-size: 20px;
+            font-weight: var(--small-font-weight, 800);
+            color: var(--footer-link-color, #e0d2d2);
+        }
+
+
+    
+    /* ---------- 06.03: quick link section ---------- */
+    
+    .quick-link div{
+        margin-top: 5%;
+    }
+
+    .quick-link div a:focus,
+    .quick-link div a:hover{
+        color:  #6fe6aa;
+        outline: none;
+    }
+
+    .quick-link div a{
+        text-decoration: none;
+        color: var(--footer-link-color, #e0d2d2);
+        font-weight: var(--small-font-weight, 800);
+    }
+
+
+    
+
+    /* ---------- 06.04: follow us section ---------- */
+    
+    .follow-us div{
+        margin-top: 5%;
+    }
+
+    .follow-us div a{
+        text-decoration: none;
+        color: var(--footer-link-color, #e0d2d2);
+        font-weight: var(--small-font-weight, 800);
+    }
+
+    .follow-us div a:focus,
+    .follow-us div a:hover{
+        color:  #6fe6aa;
+        outline: none;
+    }
+
+    .follow-us .e-mail a{
+        color: var(--footer-email-color, #2bbde8);
+    }
+
+
+    
+    
+
+    
+
+    /* ---------- 06.05: copyright section ---------- */
+    
+    .copyright-container{
+        display: flex;
+        justify-content: space-evenly;
+
+        margin: auto 2%;
+    }
+
+    .copyright-container div p{
+        text-align: center;
+        line-height: var(--meet-principal-height, 2.1);
+        font-weight: bold;
+}        /* 06.05.01: developer profile link */
+        .mantain-by p a{
+            text-decoration: none;
+            color: #a8bdce;
+        }
+
+        .mantain-by p a:hover,
+        .mantain-by p a:focus{
+            color: rgb(23, 172, 231);
+            outline: none;
+        }
+
+
+
+
+
+/*=====================================================================================================================================
+*****************************************************     academic.html      **********************************************************
+======================================================================================================================================*/
+
+
+
+
+
+/*========== 07: academic - background image ==========*/
+
+
+.background-image {
+    height: 40vh;     
+}
+
+.academic {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), 
+                url('./../academic/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+/*  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+        url('https://jentaylorplaytherapy.com/wp-content/uploads/2019/03/thought-catalog-217861-unsplash.jpg'); */
+}
+
+
+
+/*--- 07.01: academic title ---*/
+.background-image h2{
+    font-size: var(--footer-school-name-size, 3rem); 
+    color: var(--green-admission-bgcolor, #09e665);
+    text-align: center;
+    margin-top: 10vh;
+}
+
+
+/*--- 07.02: link of curiculam, books and routine ---*/
+.all-content .link{
+    text-align: center;
+    margin-bottom: auto;
+    background-color: #0ea04b;
+    flex: 1;
+}
+
+    .link div a{
+        text-decoration: none;
+        font-weight: 1000;
+        color: var(--text-white, #fff);
+        font-size: 1rem;
+    }
+
+    .link div{
+        padding: 10px;
+    }
+
+    .link div a:hover,
+    .link div a:focus{
+        color: #000;
+        text-decoration: underline;
+    }
+
+
+
+/*--- 07.03: styling all class's images ---*/
+.all-content{
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content{
+    flex: 5;
+}
+
+    /* 07.03.01: resize image  */
+    .content div img{
+        height: 200px;
+        width: 300px;
+        transition: all 0.2s ease-in-out; 
+    }
+
+    /* 07.03.02: align image and child text */
+    .content .row{
+        margin-bottom: 2%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        /* 07.03.01.01: All class  */
+        .content .row div{
+            position: relative;
+        }
+
+        .content .row div p{
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            padding: 10px 20px;
+            font-weight: 1000;
+
+            color: var(--text-white, #fff);
+            background-color: var(--button-blue, #009ddc);
+        }
+
+        .content .row img:hover{
+            /* box-shadow: 0px 0px 40px 5px rgba(78, 75, 75, 0.4),
+                        -0px -0px 40px 5px rgba(78, 75, 75, 0.4); */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+
+/*--- 08: styling table - custom table ---*/
+
+.table-blue { 
+    margin: 15% auto;
+    width: 900px;
+    overflow: hidden;
+    border-radius: 10px;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+  
+.table-blue thead tr {
+    text-align: left; 
+    background-color: #7b88e3;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+.table-blue thead tr,
+.table-blue tbody td {
+    border-bottom: 1px solid #e5e5e5;
+}
+  
+.table-blue td,
+.table-blue th {
+    text-align: center;
+    padding: 1rem 2rem;
+}
+  
+.table-blue td {
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+  
+.table-blue tr td button {
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    background-color: #06a7c4;
+    color: #fff;
+    font-size: 0.98rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+  
+.table-blue tr td button:hover {
+    border: 2px solid #06a7c4;
+    background-color: transparent;
+    color: #06a7c4;
+    transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out;
+}
+
+.table-blue tr td button:active {
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000;
+    transition: background-color 0.08s ease-in-out, color 0.09s ease-in-out;  
+}
+  
+.table-blue tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+  
+.table-blue tbody tr:last-of-type {
+    border-bottom: 2px solid #7b88e3;
+}
+
+
+
+
+
+/*=====================================================================================================================================
+********************************************     play, nursary, one.....etc.html      *************************************************
+======================================================================================================================================*/
+
+
+
+
+
+/*=====================================================================================================================================
+******************************************************     result.html      ***********************************************************
+======================================================================================================================================*/
+
+/* height of this cover photo in line 827 */
+.result {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), 
+                url('./../result/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+/*  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+                url('https://helenaargona.files.wordpress.com/2018/05/tim-arterbury-126157-unsplash.jpg'); */
+}
+
+
+
+
+
+/*=====================================================================================================================================
+******************************************************     notice.html      ***********************************************************
+======================================================================================================================================*/
+
+/* height of this cover photo in line 827 */
+.notice {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), 
+                url('./../notice/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+/*  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+                url('https://www.org3d.com/wp-content/uploads/sites/196/2019/01/element5-digital-352043-unsplash-e1545932248663.jpg'); */
+}
+
+
+
+
+
+/*=====================================================================================================================================
+******************************************************      event.html      ***********************************************************
+======================================================================================================================================*/
+
+/* height of this cover photo in line 827 */
+.event {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), 
+                url('./../event/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+/*  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+                url('https://images.squarespace-cdn.com/content/v1/5bc61d2fe8ba444c34670808/1547478992060-KS378MZ4SZICDADXGCDK/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/john-schnobrich-520022-unsplash.jpg'); */
+}
+
+
+
+
+
+/*=====================================================================================================================================
+****************************************************      about-us.html      *********************************************************
+======================================================================================================================================*/
+
+/* height of this cover photo in line 827 */
+.about-us {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), 
+                url('./../about-us/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+/*  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+                url('https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg'); */ 
+}
+
+.main-speech p {
+    color: #020420b7;
+    padding: 5%;
+    font-size: 1.4rem;
+}
+
+.speech {
+    padding: 3rem;
+    padding-bottom: 0px;
+    background-color: var(--principal-background, #f7f7f7);
+    display: flex;
+    justify-content: space-around;
+}

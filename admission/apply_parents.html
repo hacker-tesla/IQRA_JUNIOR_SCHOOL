@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<!-- ========================================================================== #
+#                           Junior School and College
+#                    A School Management System with FLASK
+#   
+#       Create by some intelligent programmer
+#       Full CRUD facility
+#   
+#       Github: https://github.com/hacker-tesla/Junior_School_and_College
+# ========================================================================== -->
+
+<html lang="en">
+
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ >
+	# This Section help you to find 
+	  specific section. 
+
+	0: head
+		0.0: styles
+		0.1: fonts
+
+	1: body
+		1.0: main
+			1.0.0: Background image
+				1.0.0.0: Navigation menu
+			
+			2.0.0: All content
+				2.0.1: Links of curiculam, books and routine
+				2.0.2: content
+
+	3: Footer section
+		3.0: Using flexbox for three column
+			3.0.0: Contact
+			3.0.1: Quick link
+			3.0.2: Follow us
+			
+		3.1: copyright and other important thing
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<head>
+
+		<!-- meta section -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Emon Hossain">
+		
+		<title>
+			Iqra Junior School
+		</title>
+
+		<!-- link section -->
+        <link 
+            rel="stylesheet" 
+            href="./../home/index.css"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="./../academic/academic.css"
+        />
+
+        <link 
+            rel="stylesheet" 
+            href="./admission.css"
+        />
+
+	</head>
+    
+    
+
+
+
+    <body>
+            
+        <!-- <div class="back">
+            <button class="button"> Back </button>
+        </div> -->
+
+        <main>
+
+            <div class="form_container">
+                
+                <header>
+                    <h1 class="school_name">IQRA JUNIOR SCHOOL</h1>
+                    <h2 class="title"> Crate Account for Parents </h2>
+                </header>
+
+                <section>
+                
+                    <form action="" method="post" class="grid_parents_apply">
+                        
+                        <!-- name -->
+                        <div class="form_input" id="name">
+
+                           <label for="name" class="form_label"> Name </label>
+                            
+                            <input 
+                                type="text" 
+                                name="name"
+                                class="form_textbox"
+                                placeholder="Enter your full name"
+                            />
+                            
+                        </div>
+
+                        <!-- username -->
+                        <div class="form_input" id="username">
+
+                            <label for="username" class="form_label"> Username </label>
+                            
+                            <input 
+                                type="text"
+                                name="username" 
+                                class="form_textbox"
+                                placeholder="Pickup an username"
+                            />
+
+                        </div>
+
+                        <!-- phone number -->
+                        <div class="form_input" id="phone_number">
+                            
+                            <label for="phone_number" class="form_label"> Phone Number </label>
+
+                            <input 
+                                type="number"
+                                name="phone_number"
+                                class="form_textbox"
+                                placeholder="Phone Number"
+                            />
+
+                        </div>
+
+                        <!-- email -->
+                        <div class="form_input" id="email">
+                            
+                            <label for="email" class="form_label"> Email </label>
+
+                            <input  
+                                type="email"
+                                name="email"
+                                class="form_textbox"
+                                placeholder="Email Address"
+                            />
+
+                        </div>
+
+                        <!-- student name -->
+                        <div class="form_input" id="student_name">
+
+                            <label for="student_name" class="form_label"> Student Name </label>
+                            
+                            <input 
+                                type="text" 
+                                name="student_name"
+                                class="form_textbox"
+                                placeholder="Your children's name"
+                            />
+                            
+                        </div>
+
+                        <!-- select student class -->
+                        <div class="form_input" id="student_class">
+                            
+                            <label for="student_class" class="form_label"> Student Class </label>
+
+                            <select name="student_class" class="form_textbox">
+                                <option value="n/a"> --- Select Class --- </option>
+                                <option value="play"> 00 - PLAY </option>
+                                <option value="nursary"> 00 - NURSARY </option>
+                                <option value="one"> 01 - ONE </option>
+                                <option value="two"> 02 - TWO </option>
+                                <option value="three"> 03 - THREE </option>
+                                <option value="four"> 04 - FOUR </option>
+                                <option value="five"> 05 - FIVE </option>
+                                <option value="six"> 06 - SIX </option>
+                                <option value="seven"> 07 - SEVEN </option>
+                                <option value="eight"> 08 - EIGHT </option>
+                            </select>
+
+                        </div>
+
+                        <!-- student roll -->
+                        <div class="form_input" id="student_roll">
+
+                            <label for="student_roll" class="form_label"> Student Roll </label>
+                            
+                            <input 
+                                type="number" 
+                                name="number"
+                                class="form_textbox"
+                                placeholder="Your children's roll"
+                            />
+                                
+                        </div>
+
+                        <!-- student id -->
+                        <div class="form_input" id="student_id">
+                          
+                            <label for="student_id" class="form_label"> Student ID </label>
+                            
+                            <input 
+                                type="number"
+                                name="student_id"
+                                class="form_textbox"
+                                placeholder="Your children's student id"
+                            />
+
+                        </div>
+
+                        <!-- password -->
+                        <div class="form_input" id="password">
+                            
+                            <label for="password" class="form_label"> Password </label>
+                            
+                            <input 
+                                type="password" 
+                                name="password"
+                                class="form_textbox"
+                                placeholder="Pickup a password"
+                            />
+
+                        </div>
+
+                        <!-- confirm password -->
+                        <div class="form_input" id="confirm_password">
+                            
+                            <label for="confirm_password" class="form_label"> Confirm Password </label>
+                            
+                            <input
+                                type="password"
+                                name="confirm_password"
+                                class="form_textbox"
+                                placeholder="Retype password"
+                            />
+
+                        </div>
+
+                        <!-- photo -->
+                        <div class="form_input" id="photo">
+
+                            <label for="photo" class="form_label"> Photo </label>
+
+                            <input
+                                type="file"
+                                name="photo"
+                                class="form_textbox"
+                                accept="image/*"
+                            />
+                            
+                        </div>
+
+                        <div class="form_input" id="signature">
+                        
+                            <label for="signature" class="form_label"> Signature </label>
+
+                            <input
+                                type="file"
+                                name="signature"
+                                class="form_textbox"
+                                accept="image/*"
+                            />
+                        
+                        </div>
+
+                        <div class="form_button" id="refresh">
+                            <button type="reset" class="submit_button refresh"> Refresh </button>
+                        </div>
+
+                        <div class="form_button" id="submit">
+                            <button class="submit_button submit"> Submit </button>
+                        </div>
+
+                    </form>
+
+                </section>
+            
+            </div>
+            
+        </main>
+
+    </body>
+
+</html>
